@@ -1,0 +1,11 @@
+static void findPairs(int a[], int sum) {
+        HashSet<Integer> store = new HashSet<Integer>();
+        int n = a.length;
+        for (int i = 0; i < n;i += 1) {
+            int addendum = sum - a[i];
+            if (store.contains(addendum)) {
+                System.out.println(a[i] + " " + addendum);
+            }
+            store.add(a[i]);
+        }
+    }
