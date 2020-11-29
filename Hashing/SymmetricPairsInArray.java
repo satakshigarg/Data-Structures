@@ -88,7 +88,7 @@ class Solution {
         return true;
     }
     
-    static String isSubset(int arr[][], int size) {
+    static String findSymPair(int arr[][], int size) {
         HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
         String symPairs = "";
         for (int i = 0; i < size; i += 1) {
@@ -113,7 +113,7 @@ class Solution {
             arr[i][0] = Int(input());
             arr[i][1] = Int(input());
         }
-        System.out.println(isSubset(arr, size));
+        System.out.println(findSymPair(arr, size));
         
     }
 }
