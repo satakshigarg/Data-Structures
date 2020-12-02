@@ -4,6 +4,7 @@ public boolean detectLoop(Node node) {
 		if (vis.contains(node)) {
 			return(true);
 		}
+		vis.add(node);
 		node = node.next;
 	}
 	return(false);
