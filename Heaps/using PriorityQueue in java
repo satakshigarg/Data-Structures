@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+
+public class Heaps {
+
+	public void createMinHeap() {
+		PriorityQueue<Integer> sal = new PriorityQueue<Integer>();
+		sal.add(1);
+		sal.add(2);
+		sal.add(7);
+		Iterator<Integer> itr = sal.iterator();
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		Object[] arr = sal.toArray();
+		System.out.println(sal.contains(2));
+		sal.remove(1);
+		sal.poll(
+
+	}
+
+	public void createMinHeap() {
+		PriorityQueue<Integer> sal = new PriorityQueue<Integer>(Collections.reverseOrder());
+		sal.add(1);
+		sal.add(2);
+		sal.add(7);
+		Iterator<Integer> itr = sal.iterator();
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		Object[] arr = sal.toArray();
+		System.out.println(sal.contains(2));
+		sal.remove(1);
+		sal.poll(
+
+	}
+
+
+
+	public static void main(Strings args[])throws IOException {
+		Heaps ob = new Heaps();
+		InputStreamReader read = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(read);
+		
+	}
+
+}
