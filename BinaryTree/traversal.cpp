@@ -43,12 +43,17 @@ void postorder(Node *root) {
 queue<int> q;
 
 void levelOrder(Node *root) {
-    if (!q.empty()) {
-        q.push(q.front() -> left);
-        q.push(q.front() -> right);
-        q.pop();
+    while (!q.empty()) {
+        if (q.front() != nullptr) {
+            q.push(q.front() -> left);
+            q.push(q.front() -> right);
+            q.pop();
+        }
     }
-    else{
-        queue.push(root);
+    else {
+        if (root != nullptr) {
+            q.push(root);
+        }
     }
+    return;
 }
