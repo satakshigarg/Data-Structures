@@ -3,8 +3,8 @@
 using namespace std;
 
 void insertEdge(int source, int dest, int* adj) {
-    adj[u][v] = 1;
-    adj[v][u] = 1;
+    adj[source][dest] = 1;
+    adj[dest][source] = 1;
 }
 
 void defineGraph(int nodes, int *adj) {
