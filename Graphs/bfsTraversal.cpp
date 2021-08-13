@@ -1,27 +1,29 @@
-vector<int> bfsNode(int node, vector<int> * adj, 
-                    vector<int> &vis, vector<int> &bfs) {
-    queue<int> store;
-    store.push(node);
-    while (!store.empty()) {
-        int parent = store.front();
-        bfs.push_back(parent);
-        store.pop();
-        for (auto child: adj[parent]) {
-            if (vis[child] == 0) {
-                store.push(child);
-                vis[child] = 1;
+void bfsNode(vector<int> * graph, vector<int> & bfsTraversal, 
+            vector<int> & visited) {
+    queue<int> bfsQueue;
+    bfsQueue.push(i);
+    while (!bfsQueue.empty()) {
+        int parent = bfsQueue.front();
+        bfsQueue.pop();
+        bfsTraversal.push_back(parent);
+        for (auto child: parent) {
+            if (!visited[child]) {
+                bfsQueue.push(child);
+                visited[child] = true;
             }
         }
     }
 }
 
-void bfsTraversal(vector<int> * adj, int nodes) {
-    vector<int>int vis(nodes+1, 0);
-    vector<int> bfs(nodes);
+vector<int> bfs(vector<int> * graph, int nodes, int edges) {
+    vector<int> bfsTraversal;
+    vector<bool> visited(nodes+1, false);
     for (int i = 1; i <= nodes; i += 1) {
-        if (vis[i] == 0) {
-            vis[i] = 1;
-            bfs(i, adj, vis);
+        if (!visited[i]) {
+            visited[i] = true;
+            bfsNode(graph, bfsTraversal, visited);
         }
     }
+    return bfsTraversal;
+    
 }
