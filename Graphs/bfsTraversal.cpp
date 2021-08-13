@@ -1,7 +1,7 @@
 void bfsNode(vector<int> * graph, vector<int> & bfsTraversal, 
-            vector<int> & visited) {
+            vector<int> & visited, int node) {
     queue<int> bfsQueue;
-    bfsQueue.push(i);
+    bfsQueue.push(node);
     while (!bfsQueue.empty()) {
         int parent = bfsQueue.front();
         bfsQueue.pop();
@@ -21,7 +21,7 @@ vector<int> bfs(vector<int> * graph, int nodes, int edges) {
     for (int i = 1; i <= nodes; i += 1) {
         if (!visited[i]) {
             visited[i] = true;
-            bfsNode(graph, bfsTraversal, visited);
+            bfsNode(graph, bfsTraversal, visited, i);
         }
     }
     return bfsTraversal;
